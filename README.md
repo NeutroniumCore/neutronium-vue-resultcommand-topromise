@@ -16,6 +16,25 @@ Component this mixin exposes:
 
 ## Example
  
+ C#
+ ```CSharp
+ public class ViewModel
+ {
+     public IResultCommand ResultCommand {get;} 
+     
+     public ViewModel()
+     {
+         ResulCommand= RelayResultCommand.Create<string, int>(Count);
+     }
+
+     private int? Count(string routeName)
+     {
+        return routeName?.Lenght.
+     }
+ }
+ ```
+ 
+ Javascript:
 ```javascript
 import {toPromise} from 'neutronium-vue-resultcommand-topromise'
 
