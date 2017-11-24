@@ -16,18 +16,15 @@ Component this mixin exposes:
 
 ## Example
  
-```HTML
-<template>
-</template>
-<script>
-import topromise from 'neutronium-vue-resultcommand-topromise'
+```javascript
+import {toPromise} from 'neutronium-vue-resultcommand-topromise'
 
-export default {
-}
-</script>
-
-<style>
-</style>
+const promise = toPromise(viewModel.ResultCommand, parameter);
+promise.then((ok)=>{
+     //Ok code
+ }, (error) =>{
+ //Error handling
+})
 ```
 
 ### Installation
