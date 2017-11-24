@@ -16,7 +16,7 @@ Component this mixin exposes:
 
 ## Example
  
- C#
+ To bind to C# ResultCommand property:
  ```CSharp
  public class ViewModel
  {
@@ -24,7 +24,7 @@ Component this mixin exposes:
      
      public ViewModel()
      {
-         ResulCommand= RelayResultCommand.Create<string, int>(Count);
+         ResultCommand = RelayResultCommand.Create<string, int>(Count);
      }
 
      private int? Count(string routeName)
@@ -34,11 +34,11 @@ Component this mixin exposes:
  }
  ```
  
- Javascript:
+ Do on javascript side:
 ```javascript
 import {toPromise} from 'neutronium-vue-resultcommand-topromise'
 
-const promise = toPromise(viewModel.ResultCommand, parameter);
+const promise = toPromise(viewModel.ResultCommand, 'countLetterNumber');
 promise.then((ok)=>{
      //Ok code
  }, (error) =>{
