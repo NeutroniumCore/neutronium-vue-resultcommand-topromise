@@ -16,18 +16,34 @@ Component this mixin exposes:
 
 ## Example
  
-```HTML
-<template>
-</template>
-<script>
-import topromise from 'neutronium-vue-resultcommand-topromise'
+ To bind to C# ResultCommand property:
+ ```CSharp
+ public class ViewModel
+ {
+     public IResultCommand ResultCommand {get;} 
+     
+     public ViewModel()
+     {
+         ResultCommand = RelayResultCommand.Create<string, int>(Count);
+     }
 
-export default {
-}
-</script>
+     private int? Count(string routeName)
+     {
+        return routeName?.Lenght.
+     }
+ }
+ ```
+ 
+ Do on javascript side:
+```javascript
+import {toPromise} from 'neutronium-vue-resultcommand-topromise'
 
-<style>
-</style>
+const promise = toPromise(viewModel.ResultCommand, 'countLetterNumber');
+promise.then((ok)=>{
+     //Ok code
+ }, (error) =>{
+ //Error handling
+})
 ```
 
 ### Installation
