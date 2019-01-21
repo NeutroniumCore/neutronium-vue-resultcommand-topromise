@@ -12,7 +12,8 @@ Provide mixin to easily integrate IResultCommand in vue.js using [Neutronium](ht
 Component this mixin exposes:
 
 ## Function
-### `topromise`
+### `topromise(resultCommand, arg)`
+Executes the given resultCommand passing the sacond argument as parameter and returns a promise;
 
 ## Example
  
